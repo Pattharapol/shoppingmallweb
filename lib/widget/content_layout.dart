@@ -12,27 +12,33 @@ class ContentLayout extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
-                'Title 1',
+                'ทดสอบ 1',
                 style: TextStyle(fontSize: 24),
               ),
             ),
-            Text(MyConstant().lorem),
+            // Text(MyConstant().lorem),
+            Text(
+                'เว็ปไซต์นี้จัดทำขึ้นเพื่อการศึกษาและทดสอบระบบ โดยใช้ flutter ในการสร้าง'),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
-                'Title 2',
+                'ทดสอบ 2',
                 style: TextStyle(fontSize: 24),
               ),
             ),
-            Text(MyConstant().lorem),
+            // Text(MyConstant().lorem),
+            Text(
+                'เว็ปไซต์นี้จัดทำขึ้นเพื่อการศึกษาและทดสอบระบบ โดยใช้ flutter ในการสร้าง'),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
-                'Title 3',
+                'ทดสอบ 3',
                 style: TextStyle(fontSize: 24),
               ),
             ),
-            Text(MyConstant().lorem),
+            // Text(MyConstant().lorem),
+            Text(
+                'เว็ปไซต์นี้จัดทำขึ้นเพื่อการศึกษาและทดสอบระบบ โดยใช้ flutter ในการสร้าง'),
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class NavigatorLayout extends StatelessWidget {
@@ -23,12 +24,12 @@ class NavigatorLayout extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('UngShoppingMall',
+                  Text('โรงพยาบาลโพธิ์ศรีสุวรรณ',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,
                       )),
-                  Text('Eazy Store'),
+                  Text('developed by : Pattharapol using flutter'),
                 ],
               ),
             ],
@@ -39,8 +40,17 @@ class NavigatorLayout extends StatelessWidget {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  TextButton(onPressed: () {}, child: Text('menu1')),
-                  TextButton(onPressed: () {}, child: Text('menu2')),
+                  TextButton(
+                    onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                        context, '/home', (route) => false),
+                    child: Text('Home'),
+                  ),
+                  SizedBox(width: 30),
+                  TextButton(
+                    onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                        context, '/showProduct', (route) => false),
+                    child: Text('Show Product'),
+                  ),
                 ],
               ),
             ],
