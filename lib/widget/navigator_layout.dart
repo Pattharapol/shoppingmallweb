@@ -24,7 +24,7 @@ class NavigatorLayout extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('โรงพยาบาลโพธิ์ศรีสุวรรณ',
+                  Text('ShoppingMall',
                       style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,

@@ -16,9 +16,7 @@ class ContentLayout extends StatelessWidget {
                 style: TextStyle(fontSize: 24),
               ),
             ),
-            // Text(MyConstant().lorem),
-            Text(
-                'เว็ปไซต์นี้จัดทำขึ้นเพื่อการศึกษาและทดสอบระบบ โดยใช้ flutter ในการสร้าง'),
+            Text(MyConstant().lorem),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
@@ -26,9 +24,7 @@ class ContentLayout extends StatelessWidget {
                 style: TextStyle(fontSize: 24),
               ),
             ),
-            // Text(MyConstant().lorem),
-            Text(
-                'เว็ปไซต์นี้จัดทำขึ้นเพื่อการศึกษาและทดสอบระบบ โดยใช้ flutter ในการสร้าง'),
+            Text(MyConstant().lorem),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
               child: Text(
@@ -36,9 +32,7 @@ class ContentLayout extends StatelessWidget {
                 style: TextStyle(fontSize: 24),
               ),
             ),
-            // Text(MyConstant().lorem),
-            Text(
-                'เว็ปไซต์นี้จัดทำขึ้นเพื่อการศึกษาและทดสอบระบบ โดยใช้ flutter ในการสร้าง'),
+            Text(MyConstant().lorem),
           ],
         ),
       ),

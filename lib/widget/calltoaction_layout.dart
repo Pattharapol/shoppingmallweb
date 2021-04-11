@@ -1,5 +1,10 @@
+import 'dart:convert';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:ungshoppingmall/Utility/dialog.dart';
+import 'package:ungshoppingmall/models/user_model.dart';
+import 'package:ungshoppingmall/states/my_service.dart';
 
 class CallToActionLayout extends StatelessWidget {
   String user, password;
@@ -55,12 +60,42 @@ class CallToActionLayout extends StatelessWidget {
             normalDialog(
                 context, 'Have Space', 'Please Fill every blank space');
           } else {
-            print('No Space');
+            checkAuthen(context);
           }
         },
         child: Text('Login'),
       ),
     );
+  }
+
+  Future<Null> checkAuthen(BuildContext context) async {
+    String path =
+        'http://localhost/shoppingmallwebAPI/getUserWhereUser.php?isAdd=true&user=$user';
+    await Dio().get(path).then((value) {
+      if (value.toString() != 'null') {
+        var result = json.decode(value.data);
+        print('### value = $value ###');
+
+        // ใส่ค่าเข้าไปให้ model เพื่อจะนำไปใช้งาน
+        for (var item in result) {
+          UserModel model = UserModel.fromMap(item);
+          print('Welcome ${model.name}');
+
+          if (password == model.password) {
+            // ส่งค่าไปที่หน้าอื่น
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => MyService(userModel: model)),
+                (route) => false);
+          } else {
+            normalDialog(context, 'Password Failed', 'Please try again...');
+          }
+        }
+      } else {
+        normalDialog(context, 'User Failed', 'No $user in my Database');
+      }
+    });
   }
 
   Container buildUser() {
@@ -83,6 +118,7 @@ class CallToActionLayout extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 16),
       width: 200,
       child: TextField(
+        obscureText: true,
         onChanged: (value) => password = value.trim(),
         decoration: InputDecoration(
           prefixIcon: Icon(Icons.lock_outline),
